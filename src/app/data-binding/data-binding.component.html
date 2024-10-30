@@ -11,4 +11,44 @@
     <img [src]="urlImagem" alt="">
     <img [src]="urlImagem" alt="">
   </article>
+  <article>
+    <h3>Class e Style Bindin</h3>
+    <div>Selecione uma classe</div>
+    <select #classe (change)="0">
+      <option value="alert-success">Sucesso</option>
+      <option value="alert-info">Info</option>
+      <option value="alert-warning">Alerta</option>
+      <option value="alert-danger">Erro</option>
+    </select>
+    <br><br>
+    <div class="alert {{ classe.value }}" role="alert">
+      Texto Color conforme valor do combobox
+    </div>
+    <div class="alert" role="alert"
+      [class.alert-success]="classe.value == 'alert-success'"
+    >
+      A simple success alert—check it out!
+    </div>
+    <div class="alert" role="alert"
+      [class.alert-info]="classe.value == 'alert-info'"
+    >
+      Aviso
+    </div>
+    <div class="alert" role="alert"
+      [class.alert-warning]="classe.value == 'alert-warning'"
+    >
+      Atenção
+    </div>
+    <div class="alert" role="alert"
+    [class.alert-danger]="classe.value == 'alert-danger'"
+    >
+      Erro
+    </div>
+    <!-- Utilização de Ternario -->
+    <div class="alert alert-danger" role="alert"
+    [style.display]="classe.value == 'alert-danger' ? 'block' : 'none' "
+    >
+      Apareço somente ao selecionar o erro
+    </div>
+  </article>
 </section>
