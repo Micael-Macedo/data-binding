@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { TwoWayDataComponent } from "./two-way-data/two-way-data.component";
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-data-binding',
   standalone: true,
-  imports: [],
+  imports: [TwoWayDataComponent, FormsModule],
   templateUrl: './data-binding.component.html',
   styleUrl: './data-binding.component.scss'
 })
