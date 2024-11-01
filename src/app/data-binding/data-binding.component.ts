@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { TwoWayDataComponent } from "./two-way-data/two-way-data.component";
 import { FormsModule } from '@angular/forms';
 import { InputPropertyComponent } from "../input-property/input-property.component";
+import { OutputPropertyComponent } from '../output-property/output-property.component';
 
 @Component({
   selector: 'app-data-binding',
   standalone: true,
-  imports: [TwoWayDataComponent, FormsModule, InputPropertyComponent],
+  imports: [TwoWayDataComponent, FormsModule, InputPropertyComponent, OutputPropertyComponent],
   templateUrl: './data-binding.component.html',
   styleUrl: './data-binding.component.scss'
 })
@@ -18,8 +19,14 @@ export class DataBindingComponent {
   valorAtual:string = ""
   valorSalvo:string = ""
   isMouseOver:boolean = false
+  valorInicial:number = 15
 
   nomeCurso: string = 'Abacate'
+
+
+  onMudouValor(evento:any){
+    console.log(evento.novoValor)
+  }
 
   getValor(){
     return 1
